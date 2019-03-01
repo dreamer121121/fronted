@@ -24,17 +24,32 @@
             top: 0;
             display: none;
         }
-        a:hover .big {
-            display: block;
-        }
+        /*a:hover .big {*/
+            /*display: block;*/
+        /*}此处用CSS样式实现鼠标放到a标签上大图显示是错误的因为big类不是a的后代*/
     </style>
 </head>
 <body>
-    <div class="small">
+    <script src="common.js"></script>
+
+    <div class="small" id="small_erweima">
         <a href="#"></a>
         <div class="big">
             <img src="./images/456.png" alt="">
         </div>
     </div>
+
+    <script>
+        var aObj =$my("small_erweima").getElementsByTagName("a")[0];
+        // 为对象注册事件
+        aObj.onmouseover = function () {
+            var big = document.getElementsByClassName("big")[0];
+            big.style.display = "block";
+        }
+        aObj.onmouseout = function () {
+            var small = document.getElementsByClassName("big")[0];
+            small.style.display = "none";
+        }
+    </script>
 </body>
 </html>
