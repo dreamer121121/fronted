@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--注意区分子节点和子元素的区别-->
+<!--IE8中兼容性存在问题-->
+<script src="common.js"></script>
+    <div id="dv">
+        <span>这是div中的第一个span标签</span>
+        <p>这是div中的第二个元素,第一个p标签</p>
+        <ul id="uu">哈哈
+            <li>乔峰</li>
+            <li>鹿茸</li>
+            <li id="three">段誉</li>
+            <li>卡卡西</li>
+            <li>雏田</li>
+        </ul>
+    </div>
+<script>
+    var objuu = $my("uu");
+    console.log(objuu.parentNode);
+    console.log(objuu.parentElement);
+    console.log(objuu.childNodes);
+    console.log(objuu.children);
+    console.log(objuu.firstChild);
+    console.log(objuu.firstElementChild);
+    console.log(objuu.lastChild);
+    console.log(objuu.lastElementChild);
+    var objul = $my("ul");
+    console.log(objul.previousSibling);
+    console.log(objul.previousElementSibling);
+    console.log(objul.nextSibling);
+    console.log(objul.nextElementSibling);
+
+</script>
+</body>
+</html>
