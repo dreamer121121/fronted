@@ -38,7 +38,7 @@
     var objimgs = $my("mask").children;//获取待操作元素
     for(var i=0;i<objimgs.length;i++){
         objimgs[i].onclick = function () {
-            $my("bd").style.backgroundImage = "url("+this.src+")";
+            $my("bd").style.backgroundImage = "url("+this.src+")";//注意更换背景图片的额方式
         }
     }
 </script>
