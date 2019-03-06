@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="创建一个P" id="btn">
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    var btn = $my("btn");
+    btn.onclick = function () {
+        var objdv = $my("dv");
+        objdv.innerHTML = "<p>这是一个P标签</p>"
+    }
+</script>
+</body>
+</html>

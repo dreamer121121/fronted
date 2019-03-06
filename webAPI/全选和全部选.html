@@ -101,6 +101,24 @@
         for(i=0;i<input.length;i++){
             input[i].checked = this.checked;
         }
+    };
+    // 获取tbody中的所有复选框
+    for(i=0;input.length;i++){
+      input[i].onclick = function () { //获取每一个元素注册点击事件
+          var flag = true;
+          for(j=0;j<input.length;j++){
+              if(!input[j].checked){
+                  flag = false;
+                  break
+              }
+          }
+      if(flag){
+          checkall.checked = true;
+      }
+      else {
+          checkall.checked = false;
+      }
+      };
     }
 
 </script>

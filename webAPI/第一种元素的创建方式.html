@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="创建一个P" id="btn">
+<script src="common.js"></script>
+<script>
+    $my("btn").onclick = function () {
+        document.write("<p>这是一个P</p>")
+        //如果在页面加载完毕后
+        //使用此种方式创建元素会使页面中原有的元素丢失
+        // 但如果在页面加载时使用此种方式创建元素则原有元素不会丢失
+    }
+</script>
+</body>
+</html>

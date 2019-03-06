@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 400px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="创建列表" id="btn"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    var btn = $my("btn");
+    btn.onclick = function () {
+        var names = ["杨过","张无忌","张三丰","赵敏","周芷若","空见神僧"];
+        var str = "";
+        str += "<ul style='list-style-type: none; cursor: pointer'>";
+        for(i=0;i<names.length;i++){
+            var temp = "";
+            temp = "<li>"+names[i]+"<li/>";
+            str += temp;
+        }
+        str += "<ul/>";
+        var objdv = $my("dv");
+        objdv.innerHTML = str;
+        var objli = objdv.getElementsByTagName("li");
+        for(i=0;i<objli.length;i++){
+            objli[i].onmouseover = function () {
+                this.style.backgroundColor = "yellow";
+            };
+            objli[i].onmouseout = function () {
+                this.style.backgroundColor = "";
+            }
+        }
+
+        // $my("dv").innerHTML = "<ul><li>杨过</li><li>张无忌</li><li>张三丰</li><ul/>";
+    }
+</script>
+</body>
+</html>
