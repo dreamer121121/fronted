@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        table {
+            border: 1px solid #000;
+        }
+        /*td {*/
+            /*height: 30px;*/
+            /*border: 1px solid red;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<input type="button" value="创建表格" id="btn"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+
+    var arr = [
+    {"name":"百度",href:"www.baidu.com"},
+    {"name":"谷歌",href:"www.google.com"},
+    {"name":"优酷",href:"www.youku.com"},
+    {"name":"土豆",href:"www.tudou.com"},
+    {"name":"快播",href:"www.kuaibo.com"},
+    {"name":"爱奇艺",href:"www.aiqiyi.com"},
+    ];
+    var btn = $my("btn");
+    btn.onclick = function () {
+        var Tableobj = document.createElement("table");
+        $my("dv").appendChild(Tableobj);
+        Tableobj.border = "1";
+        Tableobj.cellPadding = "0";
+        Tableobj.cellSpacing = "0";
+        for(i=0;i<arr.length;i++){
+            var objtr = document.createElement("tr");
+            Tableobj.appendChild(objtr);
+            var td1obj = document.createElement("td");
+            console.log(arr[i]["name"]);
+            td1obj.innerText = arr[i]["name"];
+            objtr.appendChild(td1obj);
+            var td2obj = document.createElement("td");
+            var aobj = document.createElement("a");
+            aobj.innerText = arr[i]["name"];
+            aobj.href = arr[i]["name"];
+            td2obj.appendChild(aobj);
+            objtr.appendChild(td2obj);
+        }
+    }
+</script>
+</body>
+</html>

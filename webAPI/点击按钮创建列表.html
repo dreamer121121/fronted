@@ -29,7 +29,7 @@
         str += "<ul/>";
         var objdv = $my("dv");
         objdv.innerHTML = str;
-        var objli = objdv.getElementsByTagName("li");
+        var objli = objdv.getElementsByTagName("li");//li已经被创建出来了所以可以获取
         for(i=0;i<objli.length;i++){
             objli[i].onmouseover = function () {
                 this.style.backgroundColor = "yellow";

@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 150px;
+            border: 2px dashed pink;
+        }
+    </style>
 </head>
 <body>
-
+<input type="button" value="创建p" id="btn"/>
+<div id="dv"></div>
 </body>
+<script src="common.js"></script>
+<script>
+    //第三种方式创建元素
+    //document.createElement(标签名) 只是创建了一个元素对象但还需要给其追加位置。
+    btn = $my("btn")
+    btn.onclick = function () {
+       var  Pobj = document.createElement("p");
+       Pobj.innerText = "这是一个P标签";
+        $my("dv").appendChild(Pobj);//追加一个P标签。
+    }
+</script>
 </html>
