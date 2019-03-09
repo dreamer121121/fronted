@@ -29,7 +29,7 @@
     var kungfu = ["降龙十八掌","黯然销魂掌","葵花宝典","九阴真经","吸星大法","如来神掌"
         ,"化骨绵掌","玉女心经"];
     $my("btn").onclick = function () {
-        var Ulobj = document.createElement("ul");
+        var Ulobj = document.createElement("ul");//只是创建了对象
         $my("dv").appendChild(Ulobj);
         //把li加入到ul中
         for (i=0;i<kungfu.length;i++){
