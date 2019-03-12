@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: deeppink;
+            position: absolute;
+        }
+    </style>
+
+</head>
+<body>
+<input type="button" value="移动到400px" id="400btn" />
+<input type="button" value="移动到800px" id="800btn" />
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+
+    var total = 0;
+    var step = 10;//每步移动的步长
+    $my("400btn").onclick = function () {
+        var timeId = setInterval(function () {
+            if(total<400){ //total检测是否到达400px位置
+                total = total+step;
+                $my("dv").style.left = total+step+"px";
+            }
+            else if(total>400){
+                total = total -step;
+                $my("dv").style.left = total+step+"px";
+                console.log("执行了f1")
+            }
+            else {
+                window.clearInterval(timeId);
+            }
+        },10)
+    };
+    $my("800btn").onclick = function () {
+        var intervalID2 = setInterval(function () {
+
+            if(total<800){ //total检测是否到达400px位置
+                total = total+step;
+                $my("dv").style.left = total+step+"px";
+            }
+            else {
+                window.clearInterval(intervalID2);
+            }
+
+        },10);
+    };
+
+
+
+    // function f1() {
+    //     if(total<400){ //total检测是否到达400px位置
+    //         total = total+step;
+    //         $my("dv").style.left = total+step+"px";
+    //     }
+    //     if(total>400){
+    //         total = total -step;
+    //         $my("dv").style.left = total+step+"px";
+    //         console.log("执行了f1")
+    //     }
+    //     else {
+    //         var timeId;
+    //         window.clearInterval(timeId);
+    //
+    //     }
+    // }
+
+    // function f2(){
+    //
+    //     if(total<800){ //total检测是否到达400px位置
+    //         total = total+step;
+    //         $my("dv").style.left = total+step+"px";
+    //     }
+    //     else {
+    //         window.clearInterval(intervalID2);
+    //
+    //     }
+    //
+    // }
+
+</script>
+</body>
+</html>

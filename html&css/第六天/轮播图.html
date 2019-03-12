@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+		div {
+			width: 520px;
+			height: 280px;
+			margin: 100px auto;
+			position: relative;
+			background-color: pink;
+		}
+		
+		li {
+			list-style: none;
+		}
+		.tb a {
+			width: 24px;
+			height: 36px;
+/*			background-color: pink;*/
+			display: block;
+			position: absolute;
+			bottom: 50%;
+			margin-bottom: -18px;
+		}
+		.tb .arr-left {
+			left: 0
+		}
+		.tb .arr-right {
+			right: 0
+		}
+		.tb ul {
+			width: 70px;
+			height: 13px;
+	/*		background-color: red;*/
+			position: absolute;
+			bottom: 13px;
+			left: 50%;
+			margin-left: -35px;
+			background-color: rgba(255,255,255, .3);
+			border-radius: 6px;
+
+		}
+		.tb ul li {
+			width: 8px;
+			height: 8px;
+			float: left;
+			margin: 3px;
+			background-color: #fff;
+			border-radius: 4px;
+/*			display: block;*/
+		}
+		.tb .current {
+			background-color: #f40;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="tb">
+		<img src="./taobao.jpg" alt="">
+		<a href="#" class="arr-left"><img src="left.png" alt=""></a>
+		<a href="#" class="arr-right"><img src="right.png" alt=""></a>
+		<ul>
+			<li class="current"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

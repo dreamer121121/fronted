@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*JS分为三个部分：
+    *原生JS
+    *DOM --->Document Object Model 操作页面元素
+    *BOM ---->Browser Object Model 浏览器对象模型
+    *
+    * 浏览器顶级对象：window
+    * 页面中顶级对象：doucument
+    * 页面中所有内容均属于浏览器，页面中的内容也是window的。
+    * */
+
+    var num = 10;
+    console.log(window.num)
+
+    function f1() {
+        console.log("我是一个函数")
+    }
+    f1(); //调用函数
+    window.f1();//f1既是函数也是window的方法。我们一般使用时不会用window来调用
+    //以上两个例子证明所有页面的内容无论是对象还是函数都是window的
+
+</script>
+</body>
+</html>

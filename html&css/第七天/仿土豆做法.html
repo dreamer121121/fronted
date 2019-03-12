@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		a {
+			display: block;
+			width: 448px;
+			height: 252px;
+/*			background-color: pink;*/
+			margin: 0 auto;
+			position: relative;
+		}
+		.mask {
+			width: 448px;
+			height: 252px;
+			/*background: rgba(0,0,0,.4) url(images/arr.png) no-repeat center;  注意这种写法*/
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			visibility: hidden;
+		}
+
+/* 		！！！鼠标放到a身上mask出来 */
+/*      此案例最重要的是下面这句话  */
+
+		a:hover .mask {
+			visibility: visible;
+		}
+	</style>
+</head>
+<body>
+	<a href="#">
+		<img src="images/tudou.jpg"  width="448" height="252" alt="">
+		<div class="mask"></div>
+	</a>
+
+</body>
+</html>

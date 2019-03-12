@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //两个参数，第一个是函数，第二个是number类型。
+    var intervalID = window.setInterval(function () {
+        alert("hello")
+    },1000)
+</script>
+<input type="button" value="停止" id="btn"/>
+<script>
+    document.getElementById("btn").onclick = function () {
+        window.clearInterval(intervalID)
+    }
+</script>
+</body>
+</html>

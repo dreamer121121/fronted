@@ -1,0 +1,46 @@
+	 	div {
+	 		text-align: center;
+	 	}
+	 	span {
+	 		text-align: center;
+	 	}
+		.nav {
+			text-align: center;
+			height: 60px;
+			font-size: 14px;
+		}
+		a {
+			color: blue;
+			text-align: center;
+		}
+		a:active {
+			color: red;
+		}
+		.logo {
+			text-align: center;
+		}
+		.sou {
+			text-align: center;
+			height: 50px;
+		}
+		.search {
+			width: 420px;
+			height: 25px;
+		}
+		.tj {
+			width: 100px;
+			height: 30px;
+		}
+		.bk {
+			height: 60px;
+			font-size: 14px;
+		}
+		.map {
+			height: 60px;
+			font-size: 12px;
+		}
+		.copright {
+			font-size: 12px;
+			line-height: 25px;
+		}
+		na

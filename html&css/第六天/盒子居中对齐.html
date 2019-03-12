@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<!-- 	加了定位和浮动的盒子，margin 0 auto就失效了。
+因此我们需要解决如何将定位后的盒子剧中显示的问题 -->
+	<style>
+	div {
+		width: 500px;
+		height: 200px;
+		background-color: pink;
+		position: absolute;
+		left: 50%;
+		margin-left: -250px;
+	}
+/*总结：
+1.left:父盒子宽度的一半
+2.margin-left:-自身宽度的一半*/
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

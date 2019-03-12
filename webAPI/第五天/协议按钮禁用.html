@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea name="texta" id="" cols="30" rows="10">
+  这个世界就是这么疯狂,你不同意,我就让你注册,秦始皇,打钱
+</textarea>
+<input type="button" value="请仔细阅读协议(5)" id="btn" disabled="disabled" />
+<script src="common.js"></script>
+<script>
+    var time = 5;
+    function f1() {
+        console.log(time);
+        if(time>0){
+            time--;
+            $my("btn").value = "请仔细阅读协议("+time+")";
+        }
+        else {
+            $my("btn").disabled = false;
+            $my("btn").value = "同意";
+            window.clearInterval(intervalID);
+        }
+
+    }
+
+    function f2() {
+        window.location.href = "https://www.jd.com/"
+    }
+    var intervalID = setInterval(f1,1000);
+    $my("btn").addEventListener("click",f2,false);
+
+</script>
+</body>
+</html>

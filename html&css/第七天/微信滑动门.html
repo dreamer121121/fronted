@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background: url(images/wx.jpg) repeat-x;
+		}
+		.nav {
+			height: 75px;
+		}
+		.nav ul {
+			list-style: none;
+		}
+		.nav li {
+			float: left;
+		}
+		.nav a {
+			margin: 10px;
+			height: 33px;
+			line-height: 33px;
+			color: #fff;
+			text-decoration: none;
+			background: url(images/to.png) no-repeat left;
+			display: inline-block;
+			padding-left: 15px;
+		}
+		.nav a span {
+			height: 33px;
+			background: url(images/to.png) no-repeat right;
+			padding-right: 15px;
+			display: inline-block;
+		}
+		.nav a:hover {
+			background: url(images/ao.png) no-repeat ;
+		}
+		.nav a:hover span {
+			background: url(images/ao.png) no-repeat right;
+		}
+	</style>
+</head>
+<body>
+	<ul class="nav">
+		<li>
+			<a href="#">
+				<span>首页</span>
+			</a>
+
+		</li>
+		<li>
+			<a href="#">
+				<span>三个字</span>
+			</a>
+
+		</li>
+		<li>
+			<a href="#">
+				<span>新闻客户端</span>
+			</a>
+
+		</li>
+	</ul>
+</body>
+</html>
