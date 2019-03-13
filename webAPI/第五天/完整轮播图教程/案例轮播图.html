@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border: 0;
+    }
+
+    .all {
+      width: 500px;
+      height: 200px;
+      padding: 7px;
+      border: 1px solid #ccc;
+      margin: 100px auto;
+      position: relative;
+    }
+
+    .screen {
+      width: 500px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .screen li {
+      width: 500px;
+      height: 200px;
+      overflow: hidden;
+      float: left;
+    }
+
+    .screen ul {
+      position: absolute;
+      left: 0;
+      top: 0px;
+      width: 3000px;
+    }
+
+    .all ol {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .all ol li {
+      float: left;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .all ol li.current {
+      background: #DB192A;
+    }
+
+    #arr {
+      display: none;
+    }
+
+    #arr span {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      margin-top: -20px;
+      background: #000;
+      cursor: pointer;
+      line-height: 40px;
+      text-align: center;
+      font-weight: bold;
+      font-family: '黑体';
+      font-size: 30px;
+      color: #fff;
+      opacity: 0.3;
+      border: 1px solid #fff;
+    }
+
+    #arr #right {
+      right: 5px;
+      left: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="all" id='box'>
+  <div class="screen"><!--相框-->
+    <ul>
+      <li><img src="images/1.jpg" width="500" height="200"/></li>
+      <li><img src="images/2.jpg" width="500" height="200"/></li>
+      <li><img src="images/3.jpg" width="500" height="200"/></li>
+      <li><img src="images/4.jpg" width="500" height="200"/></li>
+      <li><img src="images/5.jpg" width="500" height="200"/></li>
+    </ul>
+    <ol>
+    </ol>
+  </div>
+  <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+</div>
+<script src="common.js"></script>
+<script>
+//获取所有需要的元素
+
+  //获取最外面的div
+  var box = my$("box");
+  //获取相框
+  var screen = box.children[0];
+  //
+  var imgwidth = screen.offsetWidth;
+  //ul
+  var ulObj = screen.children[0];
+  //ol
+  var olObj = screen.children[1];//特别注意此处olObj并非伪数组而是一个对象不能直接olObj.length
+  //获取li
+  var lilist = ulObj.children;//与olObj不同此处的lilist是一个伪数组可以直接lilist.length
+  //获取焦点
+  var arr = my$("arr");
+  //获取左侧小箭头
+  var left = my$("left");
+  //获取右侧小箭头
+  var right = my$("right");
+
+
+//点击小箭头时应使点击事件中的index和鼠标移入数字图标时的index同步
+//故我们使用一个全局变量来达到同步的目的
+var index = 0;
+
+  //创建数字小按钮
+  for(var i=0;i<lilist.length;i++){
+    var liObj = document.createElement("li");
+    liObj.setAttribute("index",i);
+    liObj.innerHTML = (i+1);
+    olObj.append(liObj);
+    olObj.children[0].className = "current";
+    //一边创建一边注册事件
+    liObj.onmouseover = function () {
+
+      //干掉所有数字标签的样式
+      for(var j=0;j<olObj.children.length;j++){
+        olObj.children[j].className = "";
+      }
+      //为当前标签添加样式
+      this.className = "current";
+      //移动图片
+      index = this.getAttribute("index"); //拿到索引值
+      animate(ulObj,-index*imgwidth);
+    };
+  }
+
+
+//克隆ul中的第一个li节点,添加到ul的最后
+ulObj.append(lilist[0].cloneNode(true));
+
+  //创建箭头动作
+  //1:鼠标进入显示箭头
+  box.onmouseover = function () {
+    arr.style.display = "block";
+  };
+  box.onmouseout = function() {
+    arr.style.display = "none";
+  };
+
+  //点击右侧小箭头
+  right.onclick = function (){
+    if(index === lilist.length -1){
+        ulObj.style.left = 0+"px";
+        index = 0;
+    }
+    index ++;//立即+1用户将看到第二张图片。
+    console.log(index);
+    animate(ulObj,-index*imgwidth);
+    //若果index==5表明出去了5张显示的是第六个图但内容是第一张图
+    if(index === lilist.length-1){
+      olObj.children[olObj.children.length-1].className = "";
+      olObj.children[0].className = "current";
+    }
+    else{
+      //干掉所有小数字标签的current样式
+      for (var j=0;j<olObj.children.length;j++){
+        olObj.children[j].className = "";
+      }
+      olObj.children[index].className = "current";
+    }
+  };
+ //点击左侧小箭头
+  left.onclick = function () {
+    if(index === 0){
+      index = 5;
+      ulObj.style.left = -index*imgwidth+"px";
+    }
+    index --;
+    animate(ulObj,-index*imgwidth);
+    for(var j=0;j<olObj.children.length;j++){
+      olObj.children[j].className = "";
+    }
+    olObj.children[index].className = "current";
+
+  }
+
+
+
+</script>
+</body>
+</html>

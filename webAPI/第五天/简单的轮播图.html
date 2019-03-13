@@ -88,8 +88,9 @@
         </div>
     </div>
 </div>
-<script src="common.js"></script>
+<script src="13完整的轮播图/common.js"></script>
 <script>
+    //-------获取元素-------
     //获取最外面的div
     var box = $my("box");
   //获取相框
@@ -97,9 +98,11 @@
     //获取相框的宽度
     var imgwidth = inner.offsetWidth;
     //获取ul
-    var uObj = inner.children[0];
+    console.log(typeof(inner.children[0]))
+    var uObj = inner.firstElementChild;
     //获取所有的span标签
     var spanObj = inner.children[1].children;
+    console.log(inner.firstElementChild);
 
     //循环遍历所有的span标签注册事件
     for(var i = 0;i<spanObj.length;i++){
