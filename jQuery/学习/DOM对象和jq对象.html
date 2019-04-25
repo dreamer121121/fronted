@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+  <li id="cloth">衣服</li>
+  <li>裤子</li>
+  <li>裤衩子</li>
+  <li>袜子</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+
+	//jquery对象
+    var $li = $("li");
+    console.log($li);
+    $li.text("我改了内容");
+    
+	})
+
+</script>
+</body>
+</html>
