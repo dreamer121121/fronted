@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<div id="vue_det">
+    <h1>site : {{site}}</h1>
+    <h1>url : {{url}}</h1>
+    <h1>{{details()}}</h1>
+</div>
+<script type="text/javascript">
+    //实例化一个Vue对象，这个对象中包含数据和方法。
+
+    var vm = new Vue({
+        el: '#vue_det',//将这个Vue实例绑定到HTML标签中
+        data: { //这个Vue实例的数据，定义了三个属性
+            site: "我的第一个Vue项目",
+            url: "www.runoob.com",
+            alexa: "10000"
+        },
+        methods: { //这个Vue实例的方法
+            details: function() {
+                return  this.site + " - 学的不仅是技术，更是梦想！";
+            }
+        }
+    })
+</script>
+</body>
+</html>
