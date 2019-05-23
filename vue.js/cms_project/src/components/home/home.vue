@@ -1,5 +1,5 @@
 <template>
-        <div>
+        <div class="content"> 
         	<!-- 轮播图 开始-->
         	<mt-swipe :auto="4000">
 			  <mt-swipe-item><a href="#"><img src="./sunshine.jpg" alt=""></a></mt-swipe-item>
@@ -15,10 +15,12 @@
 		            <router-link :to="{name:'news.list'}">
 		                    <span class="mui-icon mui-icon-home"></span>
 		                    <div class="mui-media-body">新闻资讯</div>
-		                    </router-link></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            </router-link></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		            <a href="#">
 		                    <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
-		                    <div class="mui-media-body">图文分享</div></a></li>
+		                    <div class="mui-media-body">图文分享</div>
+		                    </a></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-chatbubble"></span>
 		                    <div class="mui-media-body">商品展示</div></a></li>
@@ -48,9 +50,11 @@
 
 <style scoped>
 
+.content {
+	width: 500px;
+}
 /*轮播图样式 开始*/
 .mint-swipe {
-		width: 600px;
 		height: 375px;
 		text-align: center;
 		margin-top: 0px;
@@ -63,9 +67,7 @@
 /*轮播图样式 结束*/
 
 /*九宫格样式 开始*/
-.mui-content {
-		width: 600px;
-	}
+
 .mui-content ul {
 		margin-top: 0px;
 	}
@@ -78,7 +80,7 @@
 	border: 0;
 }
 
-/*清除九宫格字体图标*/
+/*清除九宫格字体图标 开始*/
 .mui-icon-home:before,
 .mui-icon-email:before,
 .mui-icon-chatbubble:before,
@@ -87,6 +89,8 @@
 .mui-icon-phone:before {
 	content: '';
 }
+
+/*清除九宫格字体图标 结束*/
 
 /*设置九宫格字体图标*/
 .mui-icon-home {
@@ -116,8 +120,8 @@
 	background-repeat: round;
 }
 .mui-icon {
-	height: 100px;
-	width: 100px;
+	height: 80px;
+	width: 80px;
 }
 /*九宫格样式 结束*/
 

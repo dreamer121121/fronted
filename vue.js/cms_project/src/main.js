@@ -3,12 +3,10 @@
 
 //引入第三方包 开始
 import Vue from 'vue';
-
 //VueRouter:引入路由对象
 import VueRouter from 'vue-router';
 //VueRouter:安装插件
 Vue.use(VueRouter);
-
 //Mint:引入mint-ui
 import Mint from 'mint-ui';
 //Mint:引入css
@@ -19,15 +17,13 @@ Vue.use(Mint);
 import './static/vendor/mui/dist/css/mui.css';
 //全局样式
 import './static/css/global.css';
-
-
 //Axios:引入axios
 import Axios from 'axios';
 //挂载原型
 Vue.prototype.$ajax = Axios;
 //默认配置
-Axios.defaults.baseURL = 'http://localhost:8000/api/';
-//Moment:引入moment
+Axios.defaults.baseURL = 'http://localhost:8000/api/get/';
+//Moment:引入moment(用于格式化时间)
 import Moment from 'moment';
 
 //引入第三方包 结束
@@ -39,7 +35,22 @@ import Member from './components/member/member.vue';
 import Shopcart from './components/shopcart/shopcart.vue';
 import Search from './components/search/search.vue';
 import NewsList from './components/news/newslist.vue';
+import NavBar from './components/common/navBar.vue';
 //引入自己的vue文件 结尾
+
+
+//定义全局组件或过滤器开始
+//定义成全局过滤器，大家都能使用
+Vue.filter('convertDate',function(value){
+
+    return Moment(value).format('YYYY-MM-DD');
+})
+
+//定义全局组件 开始
+Vue.component('navBar',NavBar) //使用最好以nav-bar
+
+
+//定义全局组件或过滤器结束
 
 
 //VueRouter:创建对象并配置路由规则！！！导航
@@ -55,7 +66,6 @@ let router = new VueRouter({
         { name: 'news.list',path:'/news/list',component:NewsList}
     ]
 });
-
 //创建vue实例
 new Vue({
     el: '#app',

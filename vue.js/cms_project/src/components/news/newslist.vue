@@ -1,17 +1,19 @@
 <template>
     <div>
-    
+        <!--引入子组件 -->
+        <nav-bar title='新闻列表'></nav-bar>
+
     <!-- MUI 图文列表 -->
         <ul class="mui-table-view" style="height:300px;">
-            <li v-for=""        class="mui-table-view-cell mui-media">
-                <a href="">
-                    <img class="mui-media-object mui-pull-left" src="../home/nightfall.jpg"> 
+            <li v-for="news in newsList" :key="news.id" class="mui-table-view-cell mui-media">
+                <a href="http://www.baidu.com">
+                    <img class="mui-media-object mui-pull-left" :src="news.img_url"alt=""> 
               <!--       在没有使用vue-for进行遍历时img的src属性之前不能加冒号否则会报错 -->
                     <div class="mui-media-body">
-                        <span>新闻标题</span>
+                        <span v-text="news.title"></span>
                         <div class="news-desc">
-                            <p>点击数:1</p>
-                            <p>发表时间:10次</p>
+                            <p>点击数:{{news.click}}</p>
+                            <p>发表时间:{{news.add_time | convertDate}}</p>
                         </div>
                     </div>
                 </a>
@@ -29,7 +31,7 @@ export default {
     },
     created(){
         //发起请求
-        this.$ajax.get('getNewsList')
+        this.$ajax.get('NewsList')
         .then(res=>{
             this.newsList = res.data.message;
         })
@@ -51,4 +53,5 @@ export default {
 .news-desc p:nth-child(2) {
     float: right;
 }
+
 </style>

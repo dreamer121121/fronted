@@ -4253,17 +4253,20 @@ body>.mui-progressbar {
     margin: 2px 8px;
 }
 
+/*@font-face {
+    font-family: Muiicons;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/iconfont.ttf') format('truetype');
+}
+*/
+
 @font-face {
     font-family: Muiicons;
     font-weight: normal;
     font-style: normal;
     src: url('../fonts/mui.ttf') format('truetype');
 }
-
-
-
-
-
 
 
 
@@ -4656,35 +4659,32 @@ body>.mui-progressbar {
 
 /*引入自定义的样式*/
 
-.icon-shouye1:before {
-    content: "\e6cc";
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-diamond:before {
-    content: "\e653";
+.icon-shouye:before {
+  content: "\e650";
 }
 
-.icon-huiyuan1:before {
-    content: "\e60f";
+.icon-fangdajing:before {
+  content: "\e635";
 }
 
-.icon-gouwucheman:before {
-    content: "\e600";
+.icon-gouwuche:before {
+  content: "\e767";
 }
 
 .icon-huiyuan:before {
-    content: "\e61f";
+  content: "\e613";
 }
 
-.icon-huiyuan2:before {
-    content: "\e601";
-}
-
-.icon-icon:before {
-    content: "\e602";
-}
-
-
+/*引入自定义的样式*/
 
 
 
@@ -4809,3 +4809,6 @@ body>.mui-progressbar {
     height: 100%;
     border: 0;
 }
+
+/*引入自定义的样式*/
+
