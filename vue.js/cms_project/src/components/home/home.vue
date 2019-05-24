@@ -2,9 +2,9 @@
         <div class="content"> 
         	<!-- 轮播图 开始-->
         	<mt-swipe :auto="4000">
-			  <mt-swipe-item><a href="#"><img src="./sunshine.jpg" alt=""></a></mt-swipe-item>
-			  <mt-swipe-item><a href="#"><img src="./nightfall.jpg" alt=""></a></mt-swipe-item>
-			  <mt-swipe-item><a href="#"><img src="./tree.jpg" alt=""></a></mt-swipe-item>
+			  <mt-swipe-item><a href="#"><img src="../../static/img/room.jpg" alt=""></a></mt-swipe-item>
+			  <mt-swipe-item><a href="#"><img src="../../static/img/car.jpg" alt=""></a></mt-swipe-item>
+			  <mt-swipe-item><a href="#"><img src="../../static/img/cat.jpg" alt=""></a></mt-swipe-item>
 			</mt-swipe>
 			<!-- 轮播图 结束-->
 
@@ -17,10 +17,10 @@
 		                    <div class="mui-media-body">新闻资讯</div>
 		            </router-link></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-		            <a href="#">
+		            <router-link :to="{name:'pic.share'}" >
 		                    <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
 		                    <div class="mui-media-body">图文分享</div>
-		                    </a></li>
+		            </router-link></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-chatbubble"></span>
 		                    <div class="mui-media-body">商品展示</div></a></li>

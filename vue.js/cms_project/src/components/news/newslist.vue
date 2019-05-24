@@ -6,7 +6,7 @@
     <!-- MUI 图文列表 -->
         <ul class="mui-table-view" style="height:300px;">
             <li v-for="news in newsList" :key="news.id" class="mui-table-view-cell mui-media">
-                <a href="http://www.baidu.com">
+                <router-link :to="{name:'news.detail',query:{id:news.id} }">
                     <img class="mui-media-object mui-pull-left" :src="news.img_url"alt=""> 
               <!--       在没有使用vue-for进行遍历时img的src属性之前不能加冒号否则会报错 -->
                     <div class="mui-media-body">
@@ -16,7 +16,7 @@
                             <p>发表时间:{{news.add_time | convertDate}}</p>
                         </div>
                     </div>
-                </a>
+                </router-link>
 
             </li>
         </ul>

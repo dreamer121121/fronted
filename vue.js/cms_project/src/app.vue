@@ -1,11 +1,11 @@
 <template>
-        <div class="content">
+        <div>
        		<!--  头部内容 开始-->
-        	<mt-header title="信息管理系统"></mt-header>
+        	<mt-header title="目标检测项目展示系统"></mt-header>
         	<!--  头部内容 结束-->
 			
 			<!-- 主页内容 开始 -->
-        	<router-view></router-view>
+        	<router-view class="content"></router-view>
         	<!-- 主页内容 结束 -->
 
       		<!-- 底部内容 开始-->
@@ -36,11 +36,6 @@
 	          return {        
 	            }
 	        },
-	        // created(){
-	        // 	this.$ajax.get('http://182.254.146.100:8899/api/getlunbotu').then(res=>{
-	        // 			  console.log(res);
-	        // 	})
-	        // }
       }
 </script>
 <style scoped>
@@ -55,5 +50,11 @@
 }
 .mui-bar {
 	margin: 0 auto;
+}
+.mint-header {
+	background-color: #000;
+	width: 500px;
+	position: relative;
+	margin: auto;
 }
 </style>

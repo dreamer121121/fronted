@@ -36,6 +36,8 @@ import Shopcart from './components/shopcart/shopcart.vue';
 import Search from './components/search/search.vue';
 import NewsList from './components/news/newslist.vue';
 import NavBar from './components/common/navBar.vue';
+import NewsDetail from './components/news/newsDetail.vue';
+import PicShare from './components/picshare/picShare.vue';
 //引入自己的vue文件 结尾
 
 
@@ -47,7 +49,7 @@ Vue.filter('convertDate',function(value){
 })
 
 //定义全局组件 开始
-Vue.component('navBar',NavBar) //使用最好以nav-bar
+Vue.component('navBar',NavBar) //使用最好以nav-bar使用此处注意驼峰命名
 
 
 //定义全局组件或过滤器结束
@@ -63,7 +65,9 @@ let router = new VueRouter({
         { name:'member',path:'/member',component: Member}, //会员
         { name: 'shopcart',path:'/shopcart',component:Shopcart}, //购物车
         { name: 'search',path:'/search',component:Search}, //查找
-        { name: 'news.list',path:'/news/list',component:NewsList}
+        { name: 'news.list',path:'/news/list',component:NewsList},//新闻列表
+        { name: 'news.detail',path:'/news/detail',component:NewsDetail},//新闻详情
+        { name: 'pic.share',path:'/picshare',component:PicShare} //图文分享
     ]
 });
 //创建vue实例
